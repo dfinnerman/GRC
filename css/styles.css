@@ -48,8 +48,8 @@ header {
 
 /* navbar styling */
 nav ul {
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style-type: none;
   display: block;
   text-align: center;
@@ -149,8 +149,8 @@ footer {
 }
 footer ul {
   list-style-type: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

@@ -1,19 +1,32 @@
 :root {
     --main-font: 'Lato', sans-serif;
   }
+
+  $background-blue: #082B59;
+ 
+  @mixin boxmodel($margin, $padding) {
+margin: $margin;
+padding: $padding;
+  }
+
+ @mixin nospace {
+    margin: 0;
+    padding: 0;
+  }
+
   html {
     box-sizing: border-box;
   }
-  
+
   *,
   *::before,
   *::after {
     box-sizing: inherit;
   }
+  // use of the main-font 
   body {
-    background-color: #082B59;
-    margin: 0;
-    padding: 0;
+    background-color: $background-blue;
+    @include nospace;
     font-family: var(--main-font);
     line-height: 2;
   }
@@ -40,8 +53,7 @@
   /* navbar styling */
   nav {
    ul {
-    padding: 0;
-    margin: 0;
+    @include nospace;
     list-style-type: none;
     display: block;
     text-align: center;
@@ -73,8 +85,7 @@
   /* sits inside of the white background, centered */
   .main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+   @include boxmodel(0 auto, 2rem );
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -86,8 +97,7 @@
   }
   .product {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    @include boxmodel(0 auto, 2rem );
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -132,8 +142,7 @@
     /* border-top: 10px solid #d98555; */
   ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+   @include nospace;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -212,16 +221,19 @@
     .image2{
       display: none;
     }
+    // calc function
     .logo {
-      flex-basis: 60%;
+      flex-basis: calc(100% / 2)+10%;
     }
-    nav ul {
+    nav {
+      ul {
       flex-flow: row;
       align-items: center;
     }
-    nav .logo {
+    .logo {
      text-align: start;
     }
+  }
     .product-container{
       grid-template-columns: repeat(3,1fr);
       grid-template-rows: 2;
